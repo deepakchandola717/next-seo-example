@@ -1,113 +1,134 @@
-import Image from "next/image";
+import Link from "next/link"
+
+const posts = [
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "eum et est occaecati",
+    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "nesciunt quas odio",
+    "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+  },
+]
+
+const testimonials = [
+  {
+    name: 'John Doe',
+    role: 'Web Developer',
+    content: 'This blog has tremendously helped me in my journey to becoming a proficient web developer.',
+    imageUrl: 'https://api.slingacademy.com/public/sample-photos/11.jpeg',
+  },
+  {
+    name: 'Jane Smith',
+    role: 'Frontend Engineer',
+    content: 'The articles are well-written and provide deep insights into web development trends.',
+    imageUrl: 'https://api.slingacademy.com/public/sample-photos/12.jpeg',
+  },
+]
+
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div>
+      <main className="bg-gray-100 min-h-screen">
+        <header className="bg-white shadow sticky top-0 z-50">
+          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+            <h1 className="text-3xl font-bold text-gray-800">My Blog</h1>
+            <nav>
+              <a href="#home" className="text-gray-800 mx-2 hover:text-blue-600">Home</a>
+              <a href="/about" className="text-gray-800 mx-2 hover:text-blue-600">About</a>
+              <a href="#posts" className="text-gray-800 mx-2 hover:text-blue-600">Posts</a>
+              <a href="/contact-us" className="text-gray-800 mx-2 hover:text-blue-600">Contact</a>
+            </nav>
+          </div>
+        </header>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <section id="home" className="hero bg-blue-600 text-white py-20">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-5xl font-bold mb-4">Welcome to My Blog</h2>
+            <p className="text-xl mb-8">Read our latest articles on web development, programming, and more.</p>
+            <a href="#posts" className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">Explore Posts</a>
+          </div>
+        </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <section id="about" className="container mx-auto px-4 py-16 text-center">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">About Us</h2>
+          <p className="text-gray-700 text-lg max-w-3xl mx-auto">We are passionate about web development and strive to provide high-quality content to help you in your programming journey. Our blog covers a wide range of topics, from beginner tutorials to advanced techniques.</p>
+        </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        
+        <section id="posts" className="featured-posts container mx-auto px-4 py-16">
+          <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">Featured Posts</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-2">
+                    <Link href={`/posts/${post.id}`}>
+                      <span className="hover:underline text-black">{post.title}</span>
+                    </Link>
+                  </h3>
+                  <p className="text-gray-700 my-4">{post.body}</p>
+                  <Link href={`/posts/${post.id}`}>
+                    <span className="underline text-black">{"read full story..."}</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        <section className="cta bg-blue-600 text-white py-20 text-center">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold mb-4">Join Our Community</h2>
+            <p className="text-xl mb-8">Subscribe to our newsletter to stay updated with the latest posts.</p>
+            <a href="#contact" className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">Subscribe Now</a>
+          </div>
+        </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+        <section id="testimonials" className="container mx-auto px-4 py-16 text-center">
+          <h2 className="text-4xl font-bold text-gray-800 mb-8">Testimonials</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md p-6">
+                <h3 className="text-2xl font-bold mb-2">{testimonial.name}</h3>
+                <p className="text-gray-700 italic">{testimonial.role}</p>
+                <p className="text-gray-700 mt-4">{testimonial.content}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <footer id="contact" className="bg-gray-800 text-white py-6">
+          <div className="container mx-auto px-4 text-center">
+            <p>&copy; 2023 My Blog. All rights reserved.</p>
+            <p>Email: info@myblog.com | Phone: (123) 456-7890</p>
+          </div>
+        </footer>
+      </main>
+    </div>
+  )
 }

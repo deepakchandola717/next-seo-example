@@ -1,4 +1,10 @@
+# Next SEO Example
+
+Follow me on [X](https://x.com/deepakkchandola) 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+The project displays implementation of most important SEO methods for your nextjs project.
 
 ## Getting Started
 
